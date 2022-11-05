@@ -57,5 +57,11 @@ echo "########### Successfully created the volume: $DOCKER_VOLUME ########"
 
 
 ##### Running the docker container in the detached mode #####
+DOCKER_CONTAINER=nodejs
+echo "########### Running container : $DOCKER_CONTAINER ########"
+
 docker run --name nodejs -p 9000:80 --network gbc-network -v myvolume:/usr/src/myvolume -d  gbc/node-ubuntu
+
+echo "########### Successsfully running container : $DOCKER_CONTAINER ###########"
+
 
