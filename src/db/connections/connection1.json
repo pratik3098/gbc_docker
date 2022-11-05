@@ -1,0 +1,7 @@
+{ 
+    "username": "dbadmin",
+    "password":"Bwqwqasaklaqaj189" ,
+    "name": "mydb",
+    "host": "mongodb",
+    "port": "27017"
+}

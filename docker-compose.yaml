@@ -1,1 +1,28 @@
+version: '2'
 
+services:
+  app:
+    container_name: app
+    image: gbcdocker/node-ubuntu:1.0.0
+    ports:
+      - 9000:80
+    volumes: 
+      - myvolume:/usr/src/app/myvolume/
+      - ./shared/:/usr/src/app/shared/
+    
+  mongodb:
+    container_name: mongodb
+    image: bitnami/mongodb:4.4.5
+    environment: 
+      -  MONGODB_USERNAME=dbadmin 
+      -  MONGODB_PASSWORD=Bwqwqasaklaqaj189
+      -  MONGODB_DATABASE=mydb
+    ports:
+      - 27017:27017
+    volumes: 
+      - mongodb:/bitnami/mongodb
+
+volumes:
+  mongodb:
+
+  myvolume:

@@ -1,15 +1,19 @@
 FROM ubuntu:22.04
 
+EXPOSE 80 443
 
-RUN apt update -y 
+RUN apt-get update && apt-get install -y
 
-RUN apt install -y nodejs npm 
-
-
-RUN npm install -g npm@latest n
+RUN apt install -y nodejs npm  curl
 
 
-RUN n install 16.16.0
+RUN npm install -g npm@latest 
+
+RUN npm cache clean -f
+
+RUN npm install -g n
+
+RUN n  16.16.0
 
 
 RUN node -v 
