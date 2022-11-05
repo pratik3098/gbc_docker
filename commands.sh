@@ -9,7 +9,7 @@ IMAGE_TAG-=1.0.0
 ######### To build an image #########
 echo "######### Building image for : ${IMAGE_NAME} #########"
 
-docker build -t  gbc/node-ubuntu .
+docker build -t  gbc/node-ubuntu -f ./Dockerfile .
 
 echo "######### Successfully built image for $IMAGE_NAME #########"
 
