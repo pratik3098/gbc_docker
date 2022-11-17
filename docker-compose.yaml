@@ -3,8 +3,7 @@ version: '2'
 services:
   app:
     container_name: app
-    #image: gbcdocker/node-ubuntu:1.0.0
-    image: bdatabiot/nodedummy
+    image: gbcdockertest/node-ubuntu
     ports:
       - 9000:80
     volumes: 

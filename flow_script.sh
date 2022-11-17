@@ -2,14 +2,14 @@
 set -e
 ### The followiing commands creates and run the docker container
 
-IMAGE_NAME=gbc/node-ubuntu
+IMAGE_NAME=gbcdocketest/node-ubuntu
 ## Default version of the app
 IMAGE_TAG-=1.0.0
 
 ######### To build an image #########
 echo "######### Building image for : ${IMAGE_NAME} #########"
 
-docker build -t  gbc/node-ubuntu -f ./Dockerfile .
+docker build -t  gbcdocketest/node-ubuntu -f ./Dockerfile .
 
 echo "######### Successfully built image for $IMAGE_NAME #########"
 
@@ -19,7 +19,7 @@ echo "######### Successfully built image for $IMAGE_NAME #########"
 
 echo "######### Pushing image for: ${IMAGE_NAME} #########"
 
-docker push gbc/node-ubuntu  
+docker push gbcdocketest/node-ubuntu  
 
 echo "######### Successfully pushed image for $IMAGE_NAME #########"
 
@@ -28,11 +28,11 @@ echo "######### Successfully pushed image for $IMAGE_NAME #########"
 
 echo "######### Tagging image:  $IMAGE_NAME --> $IMAGE_NAME:$IMAGE_TAG #########"
 
-docker tag gbc/node-ubuntu gbc/node-ubuntu:1.0.0
+docker tag gbcdocketest/node-ubuntu gbcdocketest/node-ubuntu:1.0.0
 
 echo "######### Successfully tagged image:  $IMAGE_NAME --> $IMAGE_NAME:$IMAGE_TAG #########"
 
-docker push gbc/node-ubuntu:1.0.0
+docker push gbcdocketest/node-ubuntu:1.0.0
 
 
 
@@ -60,7 +60,7 @@ echo "########### Successfully created the volume: $DOCKER_VOLUME ########"
 DOCKER_CONTAINER=nodejs
 echo "########### Running container : $DOCKER_CONTAINER ########"
 
-docker run --name nodejs -p 9000:80 --network gbc-network -v myvolume:/usr/src/myvolume -d  gbc/node-ubuntu
+docker run --name nodejs -p 9000:80 --network gbc-network -v myvolume:/usr/src/myvolume -d  gbcdocketest/node-ubuntu
 
 echo "########### Successsfully running container : $DOCKER_CONTAINER ###########"
 

@@ -1,0 +1,12 @@
+FROM ubuntu:22.04
+
+EXPOSE 80 443
+
+
+COPY ./init_script.sh .
+
+RUN chmod 777 ./init_script.sh
+RUN ./init_script.sh
+WORKDIR /usr/src/app/
+
+CMD npm start 
