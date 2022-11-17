@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+    
+  mongonew:
+    container_name: mongonew
+    image: bitnami/mongodb:4.4.5
+    environment: 
+      -  MONGODB_USERNAME=dbadmin 
+      -  MONGODB_PASSWORD=Bwqwqasaklaqaj189
+      -  MONGODB_DATABASE=mydb
+    volumes: 
+      - mongonew:/bitnami/mongodb
+    networks:
+      - gbc-network
+
+volumes:
+  mongonew:
+
+
+networks:
+  gbc-network:
+    external: true
